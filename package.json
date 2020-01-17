@@ -1,15 +1,25 @@
 {
   "name": "commander",
   "version": "0.1.0",
-  "description": "commander",
   "private": true,
+  "description": "commander - приложение для управления локальным узлом сети",
+  "keywords": [
+    "LeoPays"
+  ],
   "author": {
     "name": "LeoPays",
-    "email": "info@LeoPays.com",
+    "email": "dev@LeoPays.com",
     "url": "https://LeoPays.com/"
   },
-  "repository": "https://github.com/mlrd-chain/commander.git",
-  "main": "index.js",
+  "homepage": "https://github.com/mlrd-chain/commander#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mlrd-chain/commander.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mlrd-chain/commander/issues",
+    "email": "dev@LeoPays.com"
+  },
   "scripts": {
     "start": "yarn run start:ea-ra",
     "start:ea-ra": "nf --port 3000 --procfile=Procfile start",
