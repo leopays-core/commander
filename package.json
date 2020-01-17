@@ -1,0 +1,22 @@
+{
+  "name": "commander",
+  "version": "0.1.0",
+  "description": "commander",
+  "private": true,
+  "author": {
+    "name": "LeoPays",
+    "email": "info@LeoPays.com",
+    "url": "https://LeoPays.com/"
+  },
+  "repository": "https://github.com/mlrd-chain/commander.git",
+  "main": "index.js",
+  "scripts": {
+    "start": "yarn run start:ea-ra",
+    "start:ea-ra": "nf --port 3000 --procfile=Procfile start",
+    "postinstall": "sh scripts/postinstall.sh"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "foreman": "^3.0.1"
+  }
+}
