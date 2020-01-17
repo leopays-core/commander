@@ -48,7 +48,7 @@ class UI extends Component {
 
   render() {
     logger.render('UI');
-    const { screen_size_type } = this.props;
+    //const { screen_size_type } = this.props;
 
     return (<UIDefault {...this.props} children={this.props.children} />);
     /*

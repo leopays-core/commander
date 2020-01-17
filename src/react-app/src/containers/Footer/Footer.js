@@ -45,7 +45,7 @@ class Footer extends Component {
 
   render() {
     logger.render('Footer');
-    const { screen_size_type } = this.props;
+    //const { screen_size_type } = this.props;
 
     return (<FooterComputer children={this.props.children} />);
 

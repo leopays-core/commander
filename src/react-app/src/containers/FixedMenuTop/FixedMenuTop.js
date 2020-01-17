@@ -45,7 +45,7 @@ class FixedMenuTop extends Component {
 
   render() {
     logger.render('FixedMenuTop');
-    const { screen_size_type } = this.props;
+    //const { screen_size_type } = this.props;
 
     return (<FixedMenuTopComputer children={this.props.children} />);
 

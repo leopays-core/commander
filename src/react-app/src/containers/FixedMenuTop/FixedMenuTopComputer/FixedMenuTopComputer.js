@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Container, Image, Menu } from 'semantic-ui-react';
 import { Link, NavLink } from 'react-router-dom';
 import mlURL from 'multi-languages-url';
-import UserMenu from '../../../components/UserMenu';
+//import UserMenu from '../../../components/UserMenu';
 import logger from '../../../lib/logger';
 import reactLogo from '../../../react-logo.svg';
 
@@ -18,9 +18,9 @@ class FixedMenuTopComputer extends PureComponent {
   render() {
     logger.render('FixedMenuTopComputer');
 
-    const { t, tReady, language, languages, pathname } = this.props;
+    const { t, /*tReady, language,*/ languages, pathname } = this.props;
     const ml = new mlURL({ languages: languages, pathname: pathname });
-    const fixed = true;
+    //const fixed = true;
 
     return (
       <Menu fixed='top' inverted>
