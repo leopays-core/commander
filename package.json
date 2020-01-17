@@ -25,8 +25,9 @@
     "start:ea-ra": "nf --port 3000 --procfile=Procfile start",
     "postinstall": "sh scripts/postinstall.sh"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "foreman": "^3.0.1"
-  }
+  "dependencies": {
+    "foreman": "^3.0.1",
+    "pkg": "^4.4.2"
+  },
+  "devDependencies": {}
 }
