@@ -1,0 +1,12 @@
+{
+  "proName": "MLRD CHAIN",
+  "welcome": "Welcome to MLRD CHAIN",
+  "menu": {
+    "home": "Home",
+    "about": "About",
+    "contacts": "Contacts"
+  },
+  "Home Page": "Home Page",
+  "Error": "Error",
+  "Not Found": "Not Found"
+}
