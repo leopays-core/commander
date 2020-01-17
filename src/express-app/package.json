@@ -1,7 +1,24 @@
 {
   "name": "express-app",
   "version": "0.0.0",
-  "private": true,
+  "description": "express-app (Сервер) для commander",
+  "keywords": [
+    "LeoPays"
+  ],
+  "author": {
+    "name": "LeoPays",
+    "email": "dev@LeoPays.com",
+    "url": "https://LeoPays.com/"
+  },
+  "homepage": "https://github.com/mlrd-chain/commander#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mlrd-chain/commander.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mlrd-chain/commander/issues",
+    "email": "dev@LeoPays.com"
+  },
   "scripts": {
     "start": "node ./bin/www"
   },

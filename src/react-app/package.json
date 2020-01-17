@@ -2,7 +2,24 @@
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
+  "description": "react-app (GUI) для commander",
   "homepage": "./",
+  "keywords": [
+    "LeoPays"
+  ],
+  "author": {
+    "name": "LeoPays",
+    "email": "dev@LeoPays.com",
+    "url": "https://LeoPays.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mlrd-chain/commander.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mlrd-chain/commander/issues",
+    "email": "dev@LeoPays.com"
+  },
   "scripts": {
     "start": "BROWSER=none react-scripts start",
     "build": "react-scripts build",

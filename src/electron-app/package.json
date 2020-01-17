@@ -2,15 +2,25 @@
   "name": "mlrd-commander",
   "productName": "mlrd-commander",
   "version": "0.1.0",
-  "description": "MLRD Commander",
   "private": true,
+  "description": "MLRD commander",
+  "keywords": [
+    "LeoPays"
+  ],
   "author": {
     "name": "LeoPays",
-    "email": "info@LeoPays.com",
+    "email": "dev@LeoPays.com",
     "url": "https://LeoPays.com/"
   },
-  "keywords": [],
-  "repository": "https://github.com/mlrd-chain/commander",
+  "homepage": "https://github.com/mlrd-chain/commander#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mlrd-chain/commander.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mlrd-chain/commander/issues",
+    "email": "dev@LeoPays.com"
+  },
   "main": "main.js",
   "bin": "cli.js",
   "scripts": {
