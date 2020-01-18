@@ -45,6 +45,9 @@ class FixedMenuTopComputer extends PureComponent {
           <Menu.Item as={NavLink} exact to={ml.url('/explorer')} >
             {t('menu:Explorer')}
           </Menu.Item>
+          <Menu.Item as={NavLink} exact to={ml.url('/docker')} >
+            {t('menu:Docker')}
+          </Menu.Item>
 
           {/*<Menu.Item position='right' fitted='vertically'>
             <UserMenu />

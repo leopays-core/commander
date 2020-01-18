@@ -5,5 +5,6 @@
   "Wallet": "Wallet",
   "Settings": "Settings",
   "Node": "Node",
-  "Bot": "Bot"
+  "Bot": "Bot",
+  "Docker": "Docker"
 }

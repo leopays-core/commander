@@ -8,6 +8,20 @@ const glob = require('glob');
 const { app, BrowserWindow } = require('electron');
 const settings = require('electron-settings');
 
+
+var Docker = require('dockerode');
+var docker = new Docker();
+docker.listImages(function (err, containers) {
+  console.log('listImages err', err)
+  console.log('listImages containers', containers)
+  containers.forEach(function (containerInfo) {
+    console.log('containerInfo', containerInfo)
+    //docker.getContainer(containerInfo.Id).stop(cb);
+  });
+});
+
+
+
 const debug = true; ///--debug/.test(process.argv[2]);
 
 if (process.mas) app.setName('MLRD Commander');

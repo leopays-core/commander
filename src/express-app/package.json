@@ -1,5 +1,5 @@
 {
-  "name": "express-app",
+  "name": "mlrd-commander-daemon",
   "version": "0.0.0",
   "description": "express-app (Сервер) для commander",
   "keywords": [
@@ -10,6 +10,7 @@
     "email": "dev@LeoPays.com",
     "url": "https://LeoPays.com/"
   },
+  "bin": "./bin/www",
   "homepage": "https://github.com/mlrd-chain/commander#readme",
   "repository": {
     "type": "git",
@@ -20,7 +21,8 @@
     "email": "dev@LeoPays.com"
   },
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build:bin": "pkg . --out-path ./build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -29,5 +31,22 @@
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "pkg": "^4.4.2"
+  },
+  "pkg": {
+    "targets": [
+      "node12-linux-x64",
+      "node12-macos-x64",
+      "node12-win-x64"
+    ],
+    "scripts": [],
+    "assets": [
+      "public/*",
+      "public/**/*",
+      "views/*",
+      "views/**/*"
+    ]
   }
 }

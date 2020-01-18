@@ -28,6 +28,8 @@
     "dev": "nodemon ./wait-react.js --debug"
   },
   "dependencies": {
+    "bluebird": "^3.7.2",
+    "dockerode": "^3.0.2",
     "electron-log": "^4.0.3",
     "electron-settings": "^3.2.0",
     "electron-shortcut-normalizer": "^1.0.0",

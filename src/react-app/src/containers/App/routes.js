@@ -26,6 +26,16 @@ const HomePageLayout = Loadable({
   loader: () => import('../../layouts/HomePageLayout'),
   loading: LoadingApp,
 });
+
+const ExplorerPageLayout = Loadable({
+  loader: () => import('../../layouts/ExplorerPageLayout'),
+  loading: LoadingApp,
+});
+const DockerPageLayout = Loadable({
+  loader: () => import('../../layouts/DockerPageLayout'),
+  loading: LoadingApp,
+});
+
 /*
 const SignInLayout = Loadable({
   loader: () => import('../../layouts/SignInLayout'),
@@ -67,7 +77,11 @@ export const routes = (ml, t) => ([
   },
   {
     path: ml.url('/explorer'),
-    component: () => (<BC pn={t('main:proName')} txt={t('menu:Explorer')} />),
+    component: () => (<ExplorerPageLayout />),
+  },
+  {
+    path: ml.url('/docker'),
+    component: () => (<DockerPageLayout />),
   },
 
   {
