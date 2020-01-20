@@ -41,7 +41,10 @@
       "node12-macos-x64",
       "node12-win-x64"
     ],
-    "scripts": [],
+    "scripts": [
+      "../lib/*",
+      "../lib/**/*"
+    ],
     "assets": [
       "public/*",
       "public/**/*",

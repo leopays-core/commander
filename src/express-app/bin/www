@@ -4,13 +4,13 @@
  * Module dependencies.
  */
 
+var path = require('path');
+var test = require('../../lib/test');
 var app = require('../app');
 var debug = require('debug')('express-app:server');
 var http = require('http');
-var fs = require('fs');
 
-const filenames = fs.readdirSync('/snapshot/express-app/');
-console.log(filenames)
+test()
 
 /**
  * Get port from environment and store in Express.

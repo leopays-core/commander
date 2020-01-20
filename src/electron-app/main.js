@@ -9,6 +9,8 @@ const { app, BrowserWindow } = require('electron');
 const settings = require('electron-settings');
 
 
+var test = require('../lib/test');
+
 var Docker = require('dockerode');
 var docker = new Docker();
 docker.listImages(function (err, containers) {
@@ -20,7 +22,7 @@ docker.listImages(function (err, containers) {
   });
 });
 
-
+test()
 
 const debug = true; ///--debug/.test(process.argv[2]);
 

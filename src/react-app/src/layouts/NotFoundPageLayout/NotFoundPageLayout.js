@@ -25,6 +25,7 @@ class NotFoundPageLayout extends PureComponent {
           <html lang={language} />
           <title>{t('main:Not Found') | t('main:proName')}</title>
         </Helmet>
+        {/*<Container style={{ marginTop: '7em' }} ></Container>*/}
         <header id="app" className="App-header">
           <Dimmer active={true} page>
             <Image src={reactLogo} className="App-logo" alt="logo" />
