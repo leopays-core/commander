@@ -26,8 +26,16 @@
     "postinstall": "sh scripts/postinstall.sh"
   },
   "dependencies": {
+    "connected-react-router": "^6.6.1",
+    "electron-redux": "^1.4.0",
     "foreman": "^3.0.1",
-    "pkg": "^4.4.2"
+    "history": "^4.10.1",
+    "immutable": "^4.0.0-rc.12",
+    "pkg": "^4.4.2",
+    "redux": "^4.0.5",
+    "redux-immutable": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {}
 }

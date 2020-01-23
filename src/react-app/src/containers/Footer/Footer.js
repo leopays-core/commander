@@ -73,7 +73,7 @@ Footer.propTypes = {
 
 export const mapStateToProps = (state) => {
   return {
-    screen_size_type: state.getIn(['device', 'screen', 'size', 'type']),
+    screen_size_type: state.device.screen.size.type,
   };
 };
 

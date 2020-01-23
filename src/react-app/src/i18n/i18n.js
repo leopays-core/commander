@@ -24,7 +24,7 @@ if (checkCookies()) caches.push('cookie');
 export default function configureI18n(store) {
   const base = `${process.env.PUBLIC_URL}`; //store.app.base;
   const lookupRedux = () => {
-    let state = store.getState().get('i18next').toJS();
+    let state = store.getState().i18next;
     return state;
   };
   const cacheUserLanguageRedux = (language) => store.dispatch(languageChange(language));

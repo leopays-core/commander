@@ -1,4 +1,4 @@
-# MLRD Commander
+# LeoPays Commander
 
 ## Building
 

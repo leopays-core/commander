@@ -8,26 +8,20 @@ const glob = require('glob');
 const { app, BrowserWindow } = require('electron');
 const settings = require('electron-settings');
 
+const os = require('os')
+
 
 var test = require('../lib/test');
 
-var Docker = require('dockerode');
-var docker = new Docker();
-docker.listImages(function (err, containers) {
-  console.log('listImages err', err)
-  console.log('listImages containers', containers)
-  containers.forEach(function (containerInfo) {
-    console.log('containerInfo', containerInfo)
-    //docker.getContainer(containerInfo.Id).stop(cb);
-  });
-});
-
 test()
+console.log(`'${process.env.NODE_ENV}'`)
+
+
 
 const debug = true; ///--debug/.test(process.argv[2]);
 
-if (process.mas) app.setName('MLRD Commander');
-app.setName('MLRD Commander');
+if (process.mas) app.setName('LeoPays Commander');
+app.setName('LeoPays Commander');
 
 let mainWindow = null;
 
@@ -61,7 +55,7 @@ function initialize() {
     mainWindow.loadURL(startUrl);
 
     // Launch fullscreen with DevTools open, usage: npm run debug
-    if (debug) {
+    if (debug) { //process.env.NODE_ENV !== 'production'
       mainWindow.webContents.openDevTools();
       mainWindow.maximize();
       require('devtron').install();

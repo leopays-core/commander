@@ -1,11 +1,12 @@
 {
-  "name": "mlrd-commander",
-  "productName": "mlrd-commander",
+  "name": "leopays-commander",
+  "productName": "leopays-commander",
   "version": "0.1.0",
   "private": true,
-  "description": "MLRD commander",
+  "description": "LeoPays Commander",
   "keywords": [
-    "LeoPays"
+    "LeoPays",
+    "Commander"
   ],
   "author": {
     "name": "LeoPays",
@@ -24,17 +25,25 @@
   "main": "main.js",
   "bin": "cli.js",
   "scripts": {
-    "start": "nodemon ./wait-react.js",
+    "start": "NODE_ENV=development nodemon ./wait-react.js",
     "dev": "nodemon ./wait-react.js --debug"
   },
   "dependencies": {
     "bluebird": "^3.7.2",
+    "connected-react-router": "^6.6.1",
     "dockerode": "^3.0.2",
     "electron-log": "^4.0.3",
+    "electron-redux": "^1.4.0",
     "electron-settings": "^3.2.0",
     "electron-shortcut-normalizer": "^1.0.0",
     "glob": "^7.1.6",
     "highlight.js": "^9.17.1",
+    "history": "^4.10.1",
+    "immutable": "^4.0.0-rc.12",
+    "redux": "^4.0.5",
+    "redux-immutable": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "update-electron-app": "^1.5.0"
   },
   "devDependencies": {
@@ -71,14 +80,14 @@
     }
   },
   "build": {
-    "appId": "money.milliard.mlrd",
-    "productName": "mlrd-commander",
+    "appId": "com.leopays.commander",
+    "productName": "leopays-commander",
     "asar": true,
     "protocols": [
       {
-        "name": "mlrd",
+        "name": "leopays",
         "schemes": [
-          "mlrd"
+          "leopays"
         ]
       }
     ],

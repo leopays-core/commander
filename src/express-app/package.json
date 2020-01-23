@@ -1,9 +1,12 @@
 {
-  "name": "mlrd-commander-daemon",
+  "name": "leopays-commander-daemon",
   "version": "0.0.0",
-  "description": "express-app (Сервер) для commander",
+  "description": "LeoPays Commander daemon",
   "keywords": [
-    "LeoPays"
+    "LeoPays",
+    "commander",
+    "daemon",
+    "server"
   ],
   "author": {
     "name": "LeoPays",

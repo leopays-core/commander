@@ -1,8 +1,8 @@
 {
-  "name": "mlrd-commander",
-  "productName": "mlrd-commander",
+  "name": "leopays-commander",
+  "productName": "leopays-commander",
   "version": "0.1.0",
-  "description": "MLRD Commander Описание https://LeoPays.com/",
+  "description": "LeoPays Commander",
   "author": "LeoPays",
   "main": "main.js",
   "bin": "cli.js",
@@ -14,9 +14,9 @@
     "package:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=out --icon=assets/app-icon/mac/app.icns --osx-sign.identity='Developer ID Application: GitHub' --extend-info=assets/mac/info.plist",
     "package:win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --out=out --icon=assets/app-icon/win/app.ico",
     "package:linux": "electron-packager . --overwrite --platform=linux --arch=x64 --out=out",
-    "package:sign-exe": "signcode './out/Electron API Demos-win32-ia32/Electron API Demos.exe' --cert ~/electron-api-demos.p12 --prompt --name 'Electron API Demos' --url 'http://electron.atom.io'",
+    "package:sign-exe": "signcode './out/LeoPays Commander-win32-ia32/LeoPays Commander.exe' --cert ~/leopays-commander.p12 --prompt --name 'LeoPays Commander' --url 'http://leopays.com'",
     "package:installer": "node ./script/installer.js",
-    "package:sign-installer": "signcode './out/windows-installer/ElectronAPIDemosSetup.exe' --cert ~/electron-api-demos.p12 --prompt --name 'Electron API Demos' --url 'http://electron.atom.io'",
+    "package:sign-installer": "signcode './out/windows-installer/ElectronAPIDemosSetup.exe' --cert ~/leopays-commander.p12 --prompt --name 'LeoPays Commander' --url 'http://leopays.com'",
     "xpackage:mas": "./script/mas.sh",
     "windows-store": "node ./script/windows-store.js",
     "release": "node ./script/release.js",
@@ -61,14 +61,14 @@
     }
   },
   "build": {
-    "appId": "money.milliard.mlrd",
-    "productName": "mlrd-commander",
+    "appId": "com.leopays.commander",
+    "productName": "leopays-commander",
     "asar": true,
     "protocols": [
       {
-        "name": "mlrd",
+        "name": "leopays",
         "schemes": [
-          "mlrd"
+          "leopays"
         ]
       }
     ],

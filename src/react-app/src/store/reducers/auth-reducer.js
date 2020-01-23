@@ -1,15 +1,14 @@
-import { fromJS } from 'immutable';
 import { auth } from '../../constants/action-types';
 import faker from 'faker';
 
 
-const initialState = fromJS({
+const initialState = {
   loginned: false, // ?
   user: {
     name: faker.name.findName(),
     avatar_src: faker.internet.avatar(),
   }
-});
+};
 
 export const authReducer = (state = initialState, action) => {
   switch (action.type) {

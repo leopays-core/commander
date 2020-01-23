@@ -1,4 +1,3 @@
-import { fromJS } from 'immutable';
 import eosio from '../../constants/eosio';
 import { servers } from '../../constants/action-types';
 
@@ -22,13 +21,13 @@ for (let s in eosio.networks) {
   is.networks[net.chain_id] = net;
 }
 
-const initialState = fromJS(is);
+const initialState = is;
 
 export const serversReducer = (state = initialState, action) => {
   switch (action.type) {
     case servers.server.update:
-      const info = fromJS(action.payload.info);
-      let tmp = state.setIn(['servers', action.payload.server.id, 'info'], info);
+      const info = action.payload.info;
+      let tmp = state.servers[action.payload.server.id].info = info;
       tmp.setIn(['servers', action.payload.server.id, 'error'], fromJS(null));
       if (tmp.getIn['servers', action.payload.server.id, 'server', 'chain_id'] !== action.payload.info.chain_id) {
         return tmp.setIn(['servers', action.payload.server.id, 'server', 'chain_id'], fromJS(action.payload.info.chain_id));

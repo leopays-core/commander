@@ -1,13 +1,15 @@
-import { Map } from 'immutable';
 import { createStore } from 'redux';
 import { reducers } from './reducers';
 import { enhancer, createReducer } from './store';
+//import { replayActionRenderer, getInitialStateRenderer } from '../electron-redux';
 
 
-export default function configureStore(initialState = Map()) {
+//const initialState = getInitialStateRenderer();
+
+export default function configureStore(initialState = {}) {
   const store = createStore(
     createReducer(reducers),
-    Map().mergeDeep(initialState),
+    initialState,
     enhancer
   );
 
@@ -21,6 +23,7 @@ export default function configureStore(initialState = Map()) {
     store.replaceReducer(createReducer(store.asyncReducers));
   }
 
+  //replayActionRenderer(store);
   // Return the modified store
   return store;
 }

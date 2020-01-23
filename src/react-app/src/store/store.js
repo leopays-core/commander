@@ -1,19 +1,20 @@
-import { Map, fromJS } from 'immutable';
-import { combineReducers } from 'redux-immutable';
-import { applyMiddleware, compose } from 'redux';
+import { applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { createBrowserHistory as createHistory } from 'history';
-import { connectRouter, routerMiddleware } from 'connected-react-router/immutable';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
+//import { forwardToMainWithParams } from '../electron-redux';
 
 
 export const history = createHistory({
   basename: `${process.env.PUBLIC_URL}`, //store.app.base;
 });
 const staticReducers = {
-  router: fromJS(connectRouter(history)),
+  router: connectRouter(history),
 };
 
-export const middleware = [thunk];
+export const middleware = [];
+//middleware.push(forwardToMainWithParams); // IMPORTANT! This goes first
+middleware.push(thunk);
 middleware.push(routerMiddleware(history));
 
 let devTools = false;
@@ -22,12 +23,12 @@ if (process.env.NODE_ENV !== 'production') {
   middleware.push(require('redux-logger').createLogger());
   devTools = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION__
     ? window.__REDUX_DEVTOOLS_EXTENSION__()
-    : null
+    : null;
 }
 
 export const enhancer = devTools
   ? compose(applyMiddleware(...middleware), devTools)
-  : compose(applyMiddleware(...middleware))
+  : compose(applyMiddleware(...middleware));
 
 export const createReducer = (asyncReducers) => {
   return combineReducers(
@@ -35,6 +36,6 @@ export const createReducer = (asyncReducers) => {
       ...staticReducers,
       ...asyncReducers,
     },
-    Map()
+    {}
   );
 }

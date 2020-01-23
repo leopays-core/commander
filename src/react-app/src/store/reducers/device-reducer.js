@@ -1,4 +1,3 @@
-import { fromJS } from 'immutable';
 import { device } from '../../constants/action-types';
 import { screenSizeTypes, getScreenSizeType } from '../../lib/device-info';
 
@@ -10,26 +9,27 @@ if (document['hidden']) {
   hiddenStatus = false;
 }
 
-const initialState = fromJS({
+const initialState = {
   screen: {
     hidden: hiddenStatus,
     size: {
       type: getScreenSizeType(),
     },
   },
-});
+};
 
 export const deviceReducer = (state = initialState, action) => {
   switch (action.type) {
     case device.screen.sizeTypeChanged:
       if (screenSizeTypes.includes(action.payload)
-        && state.getIn(['screen', 'size', 'type']) !== action.payload) {
-        return state.setIn(['screen', 'size', 'type'], action.payload);
+        && state.screen.size.type !== action.payload) {
+        state.screen.size.type = action.payload;
+        return state;
       }
       return state;
     case device.screen.hiddenChanged:
-      if (state.getIn(['screen', 'hidden']) !== action.payload) {
-        return state.setIn(['screen', 'hidden'], action.payload);
+      if (state.screen.hidden !== action.payload) {
+        return state.screenhidden, action.payload;
       }
       return state;
     default:

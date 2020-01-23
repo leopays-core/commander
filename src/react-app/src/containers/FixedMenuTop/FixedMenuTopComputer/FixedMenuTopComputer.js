@@ -67,9 +67,9 @@ FixedMenuTopComputer.propTypes = {
 
 export const mapStateToProps = (state) => {
   return {
-    language: state.getIn(['i18next', 'language']),
-    languages: state.getIn(['i18next', 'whitelist']),
-    pathname: state.getIn(['router', 'location', 'pathname']),
+    language: state.i18next.language,
+    languages: state.i18next.whitelist,
+    pathname: state.router.location.pathname,
   };
 };
 
