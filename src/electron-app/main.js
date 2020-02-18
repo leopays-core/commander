@@ -5,8 +5,9 @@ require('update-electron-app')({
 const url = require('url');
 const path = require('path');
 const glob = require('glob');
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const settings = require('electron-settings');
+const configureStore = require('./store');
 
 const os = require('os')
 
@@ -14,11 +15,14 @@ const os = require('os')
 var test = require('../lib/test');
 
 test()
-console.log(`'${process.env.NODE_ENV}'`)
+ipcMain.on(/\*/, (event, res) => {//'redux-action'
+  console.log('ipcMain on redux-action', event); // prints "ping"
+  console.log('ipcMain on redux-action', res); // prints "ping"
+});
 
 
 
-const debug = true; ///--debug/.test(process.argv[2]);
+const debug = process.env.NODE_ENV !== 'production'; ///--debug/.test(process.argv[2]);
 
 if (process.mas) app.setName('LeoPays Commander');
 app.setName('LeoPays Commander');
@@ -26,6 +30,7 @@ app.setName('LeoPays Commander');
 let mainWindow = null;
 
 function initialize() {
+  let store = configureStore();
   makeSingleInstance();
 
   load();
@@ -45,6 +50,7 @@ function initialize() {
       webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
         nodeIntegration: true,
+        nodeIntegrationInWorker: true,
       }
     };
 
@@ -78,6 +84,7 @@ function initialize() {
   app.on('activate', () => {
     if (mainWindow === null)
       createWindow();
+    store.dispatch({ type: '@@type/electron-app in main', payload: 'payload' })
   });
 }
 

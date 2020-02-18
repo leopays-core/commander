@@ -1,12 +1,14 @@
 import { createStore } from 'redux';
 import { reducers } from './reducers';
 import { enhancer, createReducer } from './store';
-//import { replayActionRenderer, getInitialStateRenderer } from '../electron-redux';
+import { replayActionRenderer, getInitialStateRenderer } from './electron-redux';
 
 
-//const initialState = getInitialStateRenderer();
 
-export default function configureStore(initialState = {}) {
+
+export default function configureStore(/*initialState = {}*/) {
+  const initialState = getInitialStateRenderer();
+
   const store = createStore(
     createReducer(reducers),
     initialState,
@@ -23,7 +25,7 @@ export default function configureStore(initialState = {}) {
     store.replaceReducer(createReducer(store.asyncReducers));
   }
 
-  //replayActionRenderer(store);
+  replayActionRenderer(store);
   // Return the modified store
   return store;
 }

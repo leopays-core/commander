@@ -30,7 +30,9 @@
   },
   "dependencies": {
     "bluebird": "^3.7.2",
+    "composefile": "^0.3.0",
     "connected-react-router": "^6.6.1",
+    "docker-compose": "^0.23.2",
     "dockerode": "^3.0.2",
     "electron-log": "^4.0.3",
     "electron-redux": "^1.4.0",
@@ -67,7 +69,7 @@
   },
   "nodemonConfig": {
     "verbose": false,
-    "delay": "2500",
+    "delay": "10000",
     "ignore": [
       "test/*",
       "docs/*"

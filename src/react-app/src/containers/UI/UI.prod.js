@@ -5,6 +5,4 @@ import UI, {
 } from './UI';
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  withImmutablePropsToJS(UI)
-);
+export default connect(mapStateToProps, mapDispatchToProps)(UI);

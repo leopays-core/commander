@@ -3,11 +3,8 @@ import { screenSizeTypes, getScreenSizeType } from '../../lib/device-info';
 
 
 let hiddenStatus;
-if (document['hidden']) {
-  hiddenStatus = true;
-} else {
-  hiddenStatus = false;
-}
+if (document['hidden']) hiddenStatus = true;
+else hiddenStatus = false;
 
 const initialState = {
   screen: {
@@ -21,15 +18,15 @@ const initialState = {
 export const deviceReducer = (state = initialState, action) => {
   switch (action.type) {
     case device.screen.sizeTypeChanged:
+      console.log(device.screen.sizeTypeChanged, action.payload)
       if (screenSizeTypes.includes(action.payload)
         && state.screen.size.type !== action.payload) {
         state.screen.size.type = action.payload;
-        return state;
       }
       return state;
     case device.screen.hiddenChanged:
       if (state.screen.hidden !== action.payload) {
-        return state.screenhidden, action.payload;
+        state.screen.hidden = action.payload;
       }
       return state;
     default:

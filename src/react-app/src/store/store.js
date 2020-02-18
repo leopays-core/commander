@@ -2,7 +2,7 @@ import { applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { createBrowserHistory as createHistory } from 'history';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
-//import { forwardToMainWithParams } from '../electron-redux';
+import { forwardToMain } from './electron-redux';
 
 
 export const history = createHistory({
@@ -13,7 +13,7 @@ const staticReducers = {
 };
 
 export const middleware = [];
-//middleware.push(forwardToMainWithParams); // IMPORTANT! This goes first
+middleware.push(forwardToMain); // IMPORTANT! This goes first // forwardToMain // forwardToMainWithParams()
 middleware.push(thunk);
 middleware.push(routerMiddleware(history));
 

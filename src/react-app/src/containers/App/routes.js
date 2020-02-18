@@ -26,6 +26,10 @@ const HomePageLayout = Loadable({
   loader: () => import('../../layouts/HomePageLayout'),
   loading: LoadingApp,
 });
+const InstallPageLayout = Loadable({
+  loader: () => import('../../layouts/InstallPageLayout'),
+  loading: LoadingApp,
+});
 
 const ExplorerPageLayout = Loadable({
   loader: () => import('../../layouts/ExplorerPageLayout'),
@@ -54,6 +58,11 @@ export const routes = (ml, t) => ([
     exact: true,
     path: ml.url('/'),
     component: () => (<HomePageLayout />),
+  },
+  {
+    exact: true,
+    path: ml.url('/install'),
+    component: () => (<InstallPageLayout />),
   },
   {
     path: ml.url('/dashboard'),

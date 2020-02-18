@@ -6,6 +6,8 @@ import LoadingApp from '../../components/LoadingApp';
 import logger from '../../lib/logger';
 import UI from '../../containers/UI';
 import api from '../../api';
+import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react';
+
 
 import { Icon, Table, Container } from 'semantic-ui-react';
 
@@ -17,46 +19,31 @@ const TableExampleCelledStriped = () => {
     <Table celled striped>
       <Table.Header>
         <Table.Row>
-          <Table.HeaderCell colSpan='3'>Git Repository</Table.HeaderCell>
+          <Table.HeaderCell colSpan='1'>Программа</Table.HeaderCell>
+          <Table.HeaderCell colSpan='1'>Установлено</Table.HeaderCell>
+          <Table.HeaderCell colSpan='1'>Комментарий</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
 
       <Table.Body>
         <Table.Row>
           <Table.Cell collapsing>
-            <Icon name='folder' /> node_modules
-        </Table.Cell>
-          <Table.Cell>Initial commit</Table.Cell>
-          <Table.Cell collapsing textAlign='right'>
+            Docker
+          </Table.Cell>
+          {/*<Table.Cell collapsing ><Loader active inline size='tiny' /></Table.Cell>*/}
+          {/*<Table.Cell collapsing ><Icon name='check circle' color='green' /></Table.Cell>*/}
+          {/*<Table.Cell collapsing><Icon name='circle outline' color='red' /></Table.Cell>*/}
+          <Table.Cell collapsing ><Loader active inline size='tiny' /></Table.Cell>
+          <Table.Cell textAlign='right'>
             10 hours ago
-        </Table.Cell>
+          </Table.Cell>
         </Table.Row>
         <Table.Row>
           <Table.Cell>
-            <Icon name='folder' /> test
-        </Table.Cell>
-          <Table.Cell>Initial commit</Table.Cell>
-          <Table.Cell textAlign='right'>10 hours ago</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>
-            <Icon name='folder' /> build
-        </Table.Cell>
-          <Table.Cell>Initial commit</Table.Cell>
-          <Table.Cell textAlign='right'>10 hours ago</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>
-            <Icon name='file outline' /> package.json
-        </Table.Cell>
-          <Table.Cell>Initial commit</Table.Cell>
-          <Table.Cell textAlign='right'>10 hours ago</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>
-            <Icon name='file outline' /> Gruntfile.js
-        </Table.Cell>
-          <Table.Cell>Initial commit</Table.Cell>
+            {/*<Icon name='folder' /> test*/}
+            Docker Compose
+          </Table.Cell>
+          <Table.Cell><Icon name='circle outline' color='red' /></Table.Cell>
           <Table.Cell textAlign='right'>10 hours ago</Table.Cell>
         </Table.Row>
       </Table.Body>

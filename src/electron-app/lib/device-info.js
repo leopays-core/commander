@@ -28,7 +28,7 @@ const screenSizeTypes = [
 module.exports.screenSizeTypes = screenSizeTypes;
 
 module.exports.getScreenSizeType = function getScreenSizeType() {
-  let screenSizeType = 'any';
+  let screenSizeType = 'computer';
 
   return screenSizeType;
 }

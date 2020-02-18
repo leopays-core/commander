@@ -1,4 +1,4 @@
-"use strict";
+//"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -13,17 +13,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function createAliasedAction(name, actionCreator) {
   // register
-  _alias2.default.set(name, actionCreator); // factory
+  //_alias2.default.set(name, actionCreator); // factory
 
 
   return function () {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+    //for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+    //  args[_key] = arguments[_key];
+    //}
 
     return {
       type: _alias.ALIASED,
-      payload: args,
+      payload: actionCreator.payload,
       meta: {
         trigger: name
       }

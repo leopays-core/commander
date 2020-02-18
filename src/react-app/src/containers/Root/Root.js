@@ -13,12 +13,21 @@ import configureI18n, { handleChangeLocation } from '../../i18n';
 import logger from '../../lib/logger';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
+import { createAliasedAction } from '../../store/electron-redux';
 
 
 const store = configureStore();
 const i18n = configureI18n(store);
 store.subscribe(handleChangeLocation(store, i18n));
-store.dispatch(checkAllServers());
+//store.dispatch(checkAllServers());
+
+store.dispatch({ type: '@@type/react-app in Root', payload: 'payload' })
+const aliasedAction = createAliasedAction(
+  '@@type/react-app in Root 2', // unique identifier
+  //type: 'IMPORT_GITHUB_PROJECTS',
+  { payload: { text: 'Do something.' } },
+);
+store.dispatch(aliasedAction())
 
 
 class Root extends PureComponent {

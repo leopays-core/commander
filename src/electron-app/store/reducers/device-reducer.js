@@ -8,7 +8,7 @@ const initialState = {
   screen: {
     hidden: hiddenStatus,
     size: {
-      type: getScreenSizeType(),
+      type: 'computer', // getScreenSizeType(),
     },
   },
 };
@@ -24,7 +24,7 @@ module.exports.deviceReducer = (state = initialState, action) => {
       return state;
     case device.screen.hiddenChanged:
       if (state.screen.hidden !== action.payload) {
-        return state.screenhidden, action.payload;
+        return state.screen.hidden, action.payload;
       }
       return state;
     default:
