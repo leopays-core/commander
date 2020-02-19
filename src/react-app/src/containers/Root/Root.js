@@ -19,7 +19,7 @@ import { createAliasedAction } from '../../store/electron-redux';
 const store = configureStore();
 const i18n = configureI18n(store);
 store.subscribe(handleChangeLocation(store, i18n));
-//store.dispatch(checkAllServers());
+store.dispatch(checkAllServers());
 
 store.dispatch({ type: '@@type/react-app in Root', payload: 'payload' })
 const aliasedAction = createAliasedAction(

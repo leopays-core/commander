@@ -1,11 +1,11 @@
 export default {
   language: null,
   languagesList: [
-    { key: "en", value: "en", country_сode: 'uk', text: "English" },
+    //{ key: "en", value: "en", country_сode: 'uk', text: "English" },
     { key: "ru", value: "ru", country_сode: 'ru', text: "Russian/Русский" }
   ],
-  fallbackLng: (process.env.NODE_ENV !== "production") ? 'ru' : 'en',
-  whitelist: ["en", "ru"],
+  fallbackLng: 'ru',//(process.env.NODE_ENV !== "production") ? 'ru' : 'en',
+  whitelist: ["ru"],//["en", "ru"],
   ns: [
     'main',
     'menu',

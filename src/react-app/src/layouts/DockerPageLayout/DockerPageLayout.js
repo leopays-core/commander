@@ -64,7 +64,9 @@ class DockerPageLayout extends PureComponent {
             <html lang={language} />
             <title>{t('menu:Docker')} | {t('main:proName')}</title>
           </Helmet>
-          <Container style={{ marginTop: '7em' }} >
+          <Container
+            style={{ paddingTop: '7em', paddingBottom: '1em', minHeight: '100vh' }}
+          >
             <TableExampleCelledStriped />
           </Container>
         </UI>

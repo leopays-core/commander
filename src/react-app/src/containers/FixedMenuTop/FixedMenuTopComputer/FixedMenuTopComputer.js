@@ -33,6 +33,9 @@ class FixedMenuTopComputer extends PureComponent {
           {/*<Menu.Item as={NavLink} exact to={ml.url('/dashboard')} >
             {t('menu:Dashboard')}
           </Menu.Item>*/}
+          <Menu.Item as={NavLink} exact to={ml.url('/explorer')} >
+            {t('menu:Explorer')}
+          </Menu.Item>
           <Menu.Item as={NavLink} exact to={ml.url('/install')} >
             {t('menu:Install')}
           </Menu.Item>
@@ -41,9 +44,6 @@ class FixedMenuTopComputer extends PureComponent {
           </Menu.Item>
           <Menu.Item as={NavLink} exact to={ml.url('/node')} >
             {t('menu:Node')}
-          </Menu.Item>
-          <Menu.Item as={NavLink} exact to={ml.url('/explorer')} >
-            {t('menu:Explorer')}
           </Menu.Item>
           <Menu.Item as={NavLink} exact to={ml.url('/bot')} >
             {t('menu:Bot')}

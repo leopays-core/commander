@@ -109,7 +109,9 @@ class InstallPageLayout extends PureComponent {
             <html lang={language} />
             <title>{t('menu:Install')} | {t('main:proName')}</title>
           </Helmet>
-          <Container style={{ marginTop: '7em' }} >
+          <Container
+            style={{ paddingTop: '7em', paddingBottom: '1em', minHeight: '100vh' }}
+          >
             <Header as='h1'>Установка</Header>
             <TableExampleCelledStriped />
           </Container>

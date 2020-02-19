@@ -22,8 +22,9 @@ class HomePageLayout extends PureComponent {
             <html lang={language} />
             <title>{t('main:proName')}</title>
           </Helmet>
-          {/*<Container style={{ marginTop: '7em' }} ></Container>*/}
-          <header id="app" className="App-header">
+          <header
+            style={{ paddingTop: '7em', paddingBottom: '1em', minHeight: '100vh' }}
+          >
             <img src={reactLogo} className="App-logo" alt="logo" />
             <p>
               {t('main:welcome')}

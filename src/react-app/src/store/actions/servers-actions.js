@@ -41,7 +41,7 @@ export const checkAllServers = () => (dispatch) => {
   for (let i in eosio.servers) {
     const srv = eosio.servers[i];
     const options = {
-      httpEndpoint: srv.endpoint, //'http://127.0.0.1:8888', // default, null for cold-storage
+      httpEndpoint: srv.nodeUrl, //'http://127.0.0.1:8888', // default, null for cold-storage
       verbose: (process.env.NODE_ENV === 'production') ? false : true, // API logging
       logger: { // Default logging functions
         log: console.log,
