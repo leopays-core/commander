@@ -39,11 +39,17 @@ class Root extends PureComponent {
 
     window.addEventListener('resize', this.handleResize);
     window.addEventListener('visibilitychange', this.handleVisibilityChange);
+
+    this.checkAllServersInterval = setInterval(
+      () => store.dispatch(checkAllServers()),
+      60 * 1000
+    );
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize);
     window.removeEventListener('visibilitychange', this.handleVisibilityChange);
+    clearInterval(this.checkAllServersInterval);
   }
 
   handleResize() {
