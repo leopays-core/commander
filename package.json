@@ -11,13 +11,13 @@
     "email": "dev@LeoPays.com",
     "url": "https://LeoPays.com/"
   },
-  "homepage": "https://github.com/mlrd-chain/commander#readme",
+  "homepage": "https://github.com/leopays-core/commander#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mlrd-chain/commander.git"
+    "url": "https://github.com/leopays-core/commander.git"
   },
   "bugs": {
-    "url": "https://github.com/mlrd-chain/commander/issues",
+    "url": "https://github.com/leopays-core/commander/issues",
     "email": "dev@LeoPays.com"
   },
   "scripts": {
